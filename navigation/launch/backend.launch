@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="tmc_grid_map_server" type="grid_map_server" name="grid_map_server" args="$(find navigation)/config/map.yaml"/>
+    <node pkg="map_server" type="map_server" name="map_server" args="$(find navigation)/config/map.yaml"/>
+    <node pkg="ros_package" type="executable" name="executable" args="-d $(find navigation)/config/rviz.rviz"/>
+    <include file="$(find hsrb_moveit_config)/launch/demo_with_controller.launch" />
+</launch>
